@@ -39,6 +39,7 @@ Capistrano::Configuration.instance.load do
   
           machine_info = capture("uname -m", :hosts => server).chomp
           server.options[:cpu] = guess_cpu(machine_info)
+          server.options[:arch] = guess_cpu(machine_info)
         end
       end
     end

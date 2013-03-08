@@ -27,7 +27,7 @@ set platform informations to each hosts.
 
 - :osname (:linux, :darwin, etc)
 - :distro (:centos5, :rhel5, :amazon, etc)
-- :cpu (:i386 or :x86_64)
+- :arch (:i386 or :x86_64)
 
 You can filter with platform infomation using :only filter:
 
