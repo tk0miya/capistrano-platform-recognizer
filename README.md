@@ -18,9 +18,9 @@ Or install it yourself as:
 
 ## Usage
 
-load capistrano-rails-dbinit in your config/deploy.rb:
+load capistrano-platform-recognizer in your config/deploy.rb:
 
-    require 'capistrano-rails-dbinit'
+    require 'capistrano-platform-recognizer'
 
 And then, capistrano-platform-recognizer runs automatically and
 set platform informations to each hosts.
