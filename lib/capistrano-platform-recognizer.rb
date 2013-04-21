@@ -30,14 +30,14 @@ Capistrano::Configuration.instance.load do
 
     task :detect do
       find_servers_for_task(current_task).each do |server|
-        osname = capture("uname -s", :hosts => server).chomp
+        osname = capture("uname -s", :hosts => server, :shell => 'bash').chomp
         server.options[:osname] = osname.downcase.to_sym
 
         if server.options[:osname] == :linux
-          issue = capture("cat /etc/issue || lsb_release -d -s", :hosts => server).chomp
+          issue = capture("cat /etc/issue || lsb_release -d -s", :hosts => server, :shell => 'bash').chomp
           server.options[:distro] = guess_distro(issue)
   
-          machine_info = capture("uname -m", :hosts => server).chomp
+          machine_info = capture("uname -m", :hosts => server, :shell => 'bash').chomp
           server.options[:cpu] = guess_cpu(machine_info)
           server.options[:arch] = guess_cpu(machine_info)
         end
